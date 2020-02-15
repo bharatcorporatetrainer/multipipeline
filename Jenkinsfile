@@ -11,12 +11,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+               echo "I am in build stage"
             }
         }
         stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+               echo "Unit tests are being executed"
             }
         }
         stage('Deliver for development') {
@@ -24,9 +24,7 @@ pipeline {
                 branch 'development' 
             }
             steps {
-                sh './jenkins/scripts/deliver-for-development.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './jenkins/scripts/kill.sh'
+                echo "development branch executed successfully"
             }
         }
         stage('Deploy for production') {
@@ -34,9 +32,7 @@ pipeline {
                 branch 'production'  
             }
             steps {
-                sh './jenkins/scripts/deploy-for-production.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './jenkins/scripts/kill.sh'
+                echo "development branch executed successfully"
             }
         }
     }
