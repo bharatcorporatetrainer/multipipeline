@@ -32,7 +32,7 @@ pipeline {
                 branch 'production'  
             }
             steps {
-                echo "development branch executed successfully"
+                echo "production branch executed successfully"
             }
         }
     }
