@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:6-alpine'
-            args '-p 3000:3000 -p 6000:5000'
+            args '-p 3500:3000 -p 6000:5000'
         }
     }
     environment {
@@ -24,7 +24,7 @@ pipeline {
                 branch 'development' 
             }
             steps {
-                echo "development branch executed successfully"
+                echo "production branch executed successfully"
             }
         }
         stage('Deploy for production') {
