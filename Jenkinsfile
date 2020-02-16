@@ -24,7 +24,7 @@ pipeline {
                 branch 'development' 
             }
             steps {
-                echo "development branch executed successfully"
+                echo "development branch executed "
             }
         }
         stage('Deploy for production') {
